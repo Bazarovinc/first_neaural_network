@@ -18,11 +18,16 @@
 
 ## Зависимость эффективности нейронной сети от колличества скрытых узлов (один скрытый слой)
 ```
->python statistic_hn_1000_10.py
+>python statistic_hn.py
 ```
-![statistic_hn_1000_10](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_1000_10.png)
+![statistic_hn_1000-10](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_1000-10.png)
 ## Зависимость эффективности нейронной сети от коэффициента обучаемости
 ```
 >python statistic_lr.py
 ```
-![statistic_lr](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_lr.png)
+![statistic_lr](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_lr.png)
+## Зависимость эффективности нейронной сети от колличество эпох обучения
+```
+>python statistic_epoh.py
+```
+![statistic_epoh](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_epohs.png)
