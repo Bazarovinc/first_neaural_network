@@ -14,4 +14,15 @@
 ```
 >python statistic_db.py
 ```
-![statistic_db](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_db.py)
+![statistic_db](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_db.png)
+
+## Зависимость эффективности нейронной сети от колличества скрытых узлов (один скрытый слой)
+```
+>python statistic_hn_1000_10.py
+```
+![statistic_hn_1000_10](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_1000_10.png)
+## Зависимость эффективности нейронной сети от коэффициента обучаемости
+```
+>python statistic_lr.py
+```
+![statistic_lr](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_lr.png)
