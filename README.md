@@ -10,33 +10,33 @@
 Для получения визуальной наглядности используйте какое-либо IDLE(например [PyChar](https://www.jetbrains.com/ru-ru/pycharm/)). Запустите программу ```presentatiom.py```.
 ![precentation_mode](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/presentation_mode.png)
 ## Программы для получения различной статистики
-## Зависимость эффективности нейронной сети от колличества тренировочных данных
+### Зависимость эффективности нейронной сети от колличества тренировочных данных
 ```
 >python statistic_db.py
 ```
 ![statistic_db](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_db.png)
 
-## Зависимость эффективности нейронной сети от колличества скрытых узлов (один скрытый слой)
+### Зависимость эффективности нейронной сети от колличества скрытых узлов (один скрытый слой)
 ```
 >python statistic_hn.py
 ```
 ![statistic_hn_1000-10](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_1000-10.png)
-## Зависимость эффективности нейронной сети от коэффициента обучаемости
+### Зависимость эффективности нейронной сети от коэффициента обучаемости
 ```
 >python statistic_lr.py
 ```
 ![statistic_lr](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_lr.png)
-## Зависимость эффективности нейронной сети от колличества эпох обучения
+### Зависимость эффективности нейронной сети от колличества эпох обучения
 ```
 >python statistic_epoh.py
 ```
 ![statistic_epoh](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_epohs.png)
-## Зависимость эффективности нейронной сети от колличества эпох обучения для различных коэффициентов обучения
+### Зависимость эффективности нейронной сети от колличества эпох обучения для различных коэффициентов обучения
 ```
 >python statistic_epoh_lr.py
 ```
 ![statistic_epoh_lr](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_opohs_lr.png)
-## Зависимость эффективности нейронной сети от колличества скрытых слоев
+### Зависимость эффективности нейронной сети от колличества скрытых слоев
 Для получения данного графика создавались нейронный сети со следующими конфигурациями скрытх слоев:
 * 0 скрытых слоев;
 * 1 скрытый слой с 500 узлами;
@@ -46,3 +46,15 @@
 >python statistic_hn_len.py
 ```
 ![statistic_hn_len](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_len.png)
+## Результаты проведенного статистического анализа
+Получив статистику, изменяя различные конфигурации нейронной сети, можно сформировать два вариант иделаьных конфигураций сети:
+* Первый
+> Коэффициент обучаемости - 0.2
+> Один скрытый слой с 500 узлами
+> Одна эпоха обучения
+> Обучение на полноценной БД MNIST, состоящей из 60000 тренировчных данных
+* Второй
+> Коэффициент обучаемости - 0.1
+> Один скрытый слой с 500 узлами
+> Три эпоха обучения
+> Обучение на полноценной БД MNIST, состоящей из 60000 тренировчных данных
