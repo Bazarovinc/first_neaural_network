@@ -7,7 +7,7 @@ learning_rate = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 graphs_for_epohs = []
 for lr in learning_rate:
     #print(f"{lr}:")
-    net = neuralNetwork(784, 100, 10, lr)
+    net = neuralNetwork(784, [100], 10, lr)
     per = []
     for ep in epoh:
         #print(f"\t{ep}:", end=" ")

@@ -5,7 +5,7 @@ from class_neural import neuralNetwork
 epoh = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 percent_for_epohs = []
 for e in epoh:
-    net = neuralNetwork(784, 100, 10, 0.2)
+    net = neuralNetwork(784, [100], 10, 0.2)
     print(f"{e}:", end=" ")
     for i in range(e):
         print(f"{i}", end=' ')
