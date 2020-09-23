@@ -45,4 +45,4 @@
 ```
 >python statistic_hn_len.py
 ```
-![statistic_hn_len](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistics_hn_len.png)
+![statistic_hn_len](https://github.com/Bazarovinc/first_neaural_network/blob/master/imgies/statistic_hn_len.png)
