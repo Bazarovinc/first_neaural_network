@@ -46,6 +46,7 @@ class neuralNetwork:
         outputs_list = []
         outputs = 0
         i = 0
+        # получение выходных сигналов на каждом слое
         for hn in self.w:
             if i == 0:
                 outputs = self.activation_function(np.dot(hn, inputs))
@@ -53,16 +54,9 @@ class neuralNetwork:
                 outputs = self.activation_function(np.dot(hn, outputs))
             outputs_list.append(outputs)
             i += 1
-        # рассчитать входящие сигналы для скрытого слоя
-        #hidden_inputs = np.dot(self.wih, inputs)
-        # рассчитать исходящие сигналы для скрытого слоя
-        #hidden_outputs = self.activation_function(hidden_inputs)
-        # рассчитать входящие сигналы для выходного слоя
-        #final_inputs = np.dot(self.who, hidden_outputs)
-        # рассчитать исходящие сигналы для выходного слоя
-        #final_outputs = self.activation_function(final_inputs)
-        # ошибка = целевое значение - фактическое значение
+        # получение ошибки в зависимости от целевого значения на выходе
         output_errors = targets - outputs
+        # обратное распространение ошибки в зависимости от колличества скрытых слоев
         if len(self.hnodes) == 0:
             self.w[0] += self.lr * np.dot((output_errors * outputs_list[0] * (1.0 - outputs_list[0])),
                                      np.transpose(inputs))
@@ -70,9 +64,7 @@ class neuralNetwork:
             i = 0
             outputs_list = outputs_list[::-1]
             for out in outputs_list:
-                n = -(i + 1)
                 if i == 0:
-                    n = -(i + 1)
                     self.w[-(i + 1)] += self.lr * np.dot((output_errors * out * (1.0 - out)),
                                                   np.transpose(outputs_list[i + 1]))
                 elif i == len(outputs_list) - 1:
@@ -92,25 +84,11 @@ class neuralNetwork:
                                                          np.transpose(outputs_list[i + 1]))
                 i += 1
 
-        """hidden_errors = np.dot(self.who.T, output_errors)
-        # обновить весовые коэффициенты связей между скрытым и выходным слоями
-        self.who += self.lr * np.dot((output_errors * final_outputs * (1.0 - final_outputs)),
-                                     np.transpose(hidden_outputs))
-        self.wih += self.lr * np.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)),
-                                     np.transpose(inputs))"""
-
     # опрос нейронной сети
     def query(self, inputs_list):
         # преобразовать список входных значений в двухмерный массив
         inputs = np.array(inputs_list, ndmin=2).T
+        # получение выходного сигнала
         for hn in self.w:
             inputs = self.activation_function(np.dot(hn, inputs))
-        """# рассчитать входящие сигналы для скрытого слоя
-        hidden_inputs = np.dot(self.wih, inputs)
-        # рассчитать исходящие сигналы для скрытого слоя
-        hidden_outputs = self.activation_function(hidden_inputs)
-        # рассчитать входящие сигналы для выходного слоя
-        final_inputs = np.dot(self.who, hidden_outputs)
-        # рассчитать исходящие сигналы для выходного слоя
-        final_outputs = self.activation_function(final_inputs)"""
         return inputs
